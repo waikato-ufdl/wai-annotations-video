@@ -19,7 +19,7 @@ class VideoFileODInputFormatSpecifier(SourceStageSpecifier):
         return VideoFileReader,
 
     """
-    Specifier for annotation-overlay-od in the object-detection domain.
+    Specifier for from-video-file-od in the object-detection domain.
     """
     @classmethod
     def domain(cls) -> Type[DomainSpecifier]:
