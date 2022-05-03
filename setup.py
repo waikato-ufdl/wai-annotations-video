@@ -45,6 +45,7 @@ setup(
         "wai.annotations.plugins": [
             # sources
             "from-video-file-od=wai.annotations.video.format.video_file.specifier:VideoFileODInputFormatSpecifier",
+            "from-webcam-od=wai.annotations.video.format.webcam.specifier:WebCamODInputFormatSpecifier",
             # ISPs
             # sinks
         ]
