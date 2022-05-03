@@ -1,4 +1,5 @@
 import cv2
+import os
 
 from wai.annotations.core.component import SourceComponent
 from wai.annotations.core.stream import ThenFunction, DoneFunction
@@ -46,6 +47,13 @@ class VideoFileReader(
         type=int,
         default=-1,
         help="determines the maximum number of frames to read; ignored if <=0"
+    )
+
+    prefix: str = TypedOption(
+        "-p", "--prefix",
+        type=str,
+        default="",
+        help="the prefix to use for the frames"
     )
 
     """
@@ -97,7 +105,10 @@ class VideoFileReader(
                 self._frame_count += 1
                 count = 0
                 data = cv2.imencode(".jpg", frame_curr)[1].tobytes()
-                filename = "%08d.jpg" % self._frame_no
+                prefix = (os.path.splitext(os.path.basename(self.input_file))[0] + "-") if (len(self.prefix) == 0) else self.prefix
+                filename = os.path.join(
+                    os.path.dirname(self.input_file),
+                    "%s%08d.jpg" % (prefix, self._frame_no))
                 height, width, _ = frame_curr.shape
                 image = Image(filename=filename, data=data, format=ImageFormat.JPG, size=(width, height))
                 instance = ImageObjectDetectionInstance(data=image, annotations=LocatedObjects())
