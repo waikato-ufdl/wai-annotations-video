@@ -48,6 +48,7 @@ setup(
             "from-webcam-od=wai.annotations.video.format.webcam.specifier:WebCamODInputFormatSpecifier",
             # ISPs
             # sinks
+            "to-video-file-od=wai.annotations.video.format.video_file.specifier:VideoFileODOutputFormatSpecifier",
         ]
     }
 )

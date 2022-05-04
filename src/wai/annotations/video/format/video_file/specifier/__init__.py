@@ -1,1 +1,2 @@
 from ._VideoFileODInputFormatSpecifier import VideoFileODInputFormatSpecifier
+from ._VideoFileODOutputFormatSpecifier import VideoFileODOutputFormatSpecifier

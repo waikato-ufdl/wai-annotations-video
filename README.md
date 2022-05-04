@@ -51,3 +51,19 @@ optional arguments:
   -i WEBCAM_ID, --webcam-id WEBCAM_ID
                         the webcam ID to read from
 ```
+
+### TO-VIDEO-FILE-OD
+Writes frames to a MJPG video file.
+
+#### Domain(s):
+- **Image Object-Detection Domain**
+
+#### Options:
+```
+usage: to-video-file-od [-f FPS] [-o OUTPUT_FILE]
+
+optional arguments:
+  -f FPS, --fps FPS     the frames per second to use
+  -o OUTPUT_FILE, --output OUTPUT_FILE
+                        the MJPG video file to write to
+```
