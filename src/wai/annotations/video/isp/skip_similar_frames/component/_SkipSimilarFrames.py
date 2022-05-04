@@ -35,7 +35,7 @@ class SkipSimilarFrames(
     change_threshold: float = TypedOption(
         "-t", "--change-threshold",
         type=float,
-        default=0.001,
+        default=0.01,
         help="the percentage of pixels that changed relative to size of image (0-1)"
     )
 
@@ -50,28 +50,29 @@ class SkipSimilarFrames(
             then: ThenFunction[ImageInstance],
             done: DoneFunction
     ):
-        if not hasattr(self, "_image"):
-            self._image = None
+        if not hasattr(self, "_last_image"):
             self._last_image = None
 
         # read image
         img_array = np.fromstring(io.BytesIO(element.data.data).read(), dtype=np.uint8)
         img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
-        # shift state
-        self._last_image = self._image
-        self._image = img
-
         # nothing to compare against?
         if self._last_image is None:
+            # shift state
+            self._last_image = img
+            # forward frame
             then(element)
             return
 
-        ratio, changed = detect_change(self._last_image, self._image,
+        # detect change
+        ratio, changed = detect_change(self._last_image, img,
                                        self.conversion, self.bw_threshold, self.change_threshold)
-
         if self.verbose:
             self.logger.info("%s (ratio/changed): %f -> %s" % (element.data.filename, ratio, str(changed)))
 
         if changed:
+            # shift state
+            self._last_image = img
+            # forward frame
             then(element)
