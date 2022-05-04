@@ -8,6 +8,7 @@ The following sources are available:
 The following inline stream processors (ISPs) are available:
 
 * `drop-frames`: drops every nth frame from the stream
+* `skip-similar-frames`: drops frames that are too similar to each other
 
 The following sinks are avilable:
 
