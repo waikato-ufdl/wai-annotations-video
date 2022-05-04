@@ -69,6 +69,28 @@ optional arguments:
                         which nth frame to drop, e..g, '2' means to drop every 2nd frame; passes frames through if <=1
 ```
 
+### SKIP-SIMILAR-FRAMES
+Skips frames in the stream that are deemed too similar.
+
+#### Domain(s):
+- **Image Classification Domain**
+- **Image Object-Detection Domain**
+- **Image Segmentation Domain**
+
+#### Options:
+```
+usage: skip-similar-frames [-b BW_THRESHOLD] [-t CHANGE_THRESHOLD] [-c CONVERSION] [-v]
+
+optional arguments:
+  -b BW_THRESHOLD, --bw-threshold BW_THRESHOLD
+                        the threshold to use for converting a gray-scale like image to black and white (0-255)
+  -t CHANGE_THRESHOLD, --change-threshold CHANGE_THRESHOLD
+                        the percentage of pixels that changed relative to size of image (0-1)
+  -c CONVERSION, --conversion CONVERSION
+                        how to convert the BGR image to a single channel image (gray/r/g/b)
+  -v, --verbose         whether to output some debugging output.
+```
+
 
 ### TO-VIDEO-FILE-OD
 Writes frames to a MJPG video file.
