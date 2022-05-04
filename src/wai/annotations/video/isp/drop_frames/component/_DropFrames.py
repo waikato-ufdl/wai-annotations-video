@@ -1,6 +1,4 @@
 from wai.common.cli.options import TypedOption
-
-from wai.common.cli.options import TypedOption, FlagOption
 from wai.annotations.core.component import ProcessorComponent
 from wai.annotations.core.stream import ThenFunction, DoneFunction
 from wai.annotations.core.stream.util import RequiresNoFinalisation
@@ -15,7 +13,7 @@ class DropFrames(
     Stream processor which drops frames.
     """
 
-    nth_frame: float = TypedOption(
+    nth_frame: int = TypedOption(
         "-n", "--nth-frame",
         type=int,
         default=0,
