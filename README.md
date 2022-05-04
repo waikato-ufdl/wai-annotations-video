@@ -107,3 +107,29 @@ optional arguments:
   -o OUTPUT_FILE, --output OUTPUT_FILE
                         the MJPG video file to write to
 ```
+
+### CALC-FRAME-CHANGES
+Calculates the changes between frames, which can be used with the skip-similar-frames ISP.
+
+#### Domain(s):
+- **Image Object-Detection Domain**
+
+#### Options:
+```
+usage: calc-frame-changes [-b BW_THRESHOLD] [-t CHANGE_THRESHOLD] [-c CONVERSION] [-B NUM_BINS] [-o OUTPUT_FILE] [-f OUTPUT_FORMAT] [-v]
+
+optional arguments:
+  -b BW_THRESHOLD, --bw-threshold BW_THRESHOLD
+                        the threshold to use for converting a gray-scale like image to black and white (0-255)
+  -t CHANGE_THRESHOLD, --change-threshold CHANGE_THRESHOLD
+                        the percentage of pixels that changed relative to size of image (0-1)
+  -c CONVERSION, --conversion CONVERSION
+                        how to convert the BGR image to a single channel image (gray/r/g/b)
+  -B NUM_BINS, --num-bins NUM_BINS
+                        the number of bins to use for the histogram
+  -o OUTPUT_FILE, --output OUTPUT_FILE
+                        the file to write to statistics to, stdout if not provided
+  -f OUTPUT_FORMAT, --output-format OUTPUT_FORMAT
+                        how to output the statistics (text/csv/json)
+  -v, --verbose         whether to output some debugging output.
+```

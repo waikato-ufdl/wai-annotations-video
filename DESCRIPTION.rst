@@ -13,3 +13,4 @@ The following inline stream processors (ISPs) are available:
 The following sinks are avilable:
 
 * `to-video-file-od`: writes frames to an MJPG video file
+* `calc-frame-changes`: generates a histogram of the changes between frames, can be used for calculating a threshold for `skip-similar-frames`

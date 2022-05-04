@@ -40,6 +40,7 @@ setup(
         "wai.annotations.core>=0.1.1",
         "opencv-python",
         "numpy",
+        "termplotlib",
     ],
     entry_points={
         "wai.annotations.plugins": [
@@ -51,6 +52,7 @@ setup(
             "skip-similar-frames=wai.annotations.video.isp.skip_similar_frames.specifier:SkipSimilarFramesISPSpecifier",
             # sinks
             "to-video-file-od=wai.annotations.video.format.video_file.specifier:VideoFileODOutputFormatSpecifier",
+            "calc-frame-changes=wai.annotations.video.format.calc_frame_changes.specifier:CalcFrameChangesODOutputFormatSpecifier",
         ]
     }
 )
