@@ -47,6 +47,7 @@ setup(
             "from-video-file-od=wai.annotations.video.format.video_file.specifier:VideoFileODInputFormatSpecifier",
             "from-webcam-od=wai.annotations.video.format.webcam.specifier:WebCamODInputFormatSpecifier",
             # ISPs
+            "drop-frames=wai.annotations.video.isp.drop_frames.specifier:DropFramesISPSpecifier",
             # sinks
             "to-video-file-od=wai.annotations.video.format.video_file.specifier:VideoFileODOutputFormatSpecifier",
         ]

@@ -52,6 +52,24 @@ optional arguments:
                         the webcam ID to read from
 ```
 
+### DROP-FRAMES
+Drops frames from the stream.
+
+#### Domain(s):
+- **Image Classification Domain**
+- **Image Object-Detection Domain**
+- **Image Segmentation Domain**
+
+#### Options:
+```
+usage: drop-frames [-n NTH_FRAME]
+
+optional arguments:
+  -n NTH_FRAME, --nth-frame NTH_FRAME
+                        which nth frame to drop, e..g, '2' means to drop every 2nd frame; passes frames through if <=1
+```
+
+
 ### TO-VIDEO-FILE-OD
 Writes frames to a MJPG video file.
 
