@@ -4,6 +4,7 @@ Changelog
 1.0.1 (????-??-??)
 ------------------
 
+- Fixed error message of DropFrames/SkipSimilarFrames in case data of wrong domain is coming through
 - ...
 
 
