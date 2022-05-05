@@ -29,7 +29,7 @@ class SkipSimilarFramesISPSpecifier(ProcessorStageSpecifier):
             return input_domain
         else:
             raise Exception(
-                f"Crop only handles the following domains: "
+                f"SkipSimilarFrames only handles the following domains: "
                 f"{ImageClassificationDomainSpecifier.name()}, "
                 f"{ImageObjectDetectionDomainSpecifier.name()}, "
                 f"{ImageSegmentationDomainSpecifier.name()}"
