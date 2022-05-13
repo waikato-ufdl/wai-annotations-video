@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 - Fixed error message of DropFrames/SkipSimilarFrames in case data of wrong domain is coming through
+- added: filter-frames-by-label-od
 - ...
 
 

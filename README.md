@@ -2,6 +2,33 @@
 wai.annotations plugin for video support.
 
 ## Plugins
+### FILTER-FRAMES-BY-LABEL-OD
+Filters frames from the stream using the labels in the annotations, i.e., keeps or drops frames depending on presence/absence of labels.
+
+#### Domain(s):
+- **Image Object-Detection Domain**
+- **Image Segmentation Domain**
+- **Image Classification Domain**
+
+#### Options:
+```
+usage: filter-frames-by-label-od [--excluded-labels EXCLUDED_LABELS] [--key-label KEY_LABEL] [--key-score KEY_SCORE] [--min-score MIN_SCORE] [--required-labels REQUIRED_LABELS] [-v]
+
+optional arguments:
+  --excluded-labels EXCLUDED_LABELS
+                        the comma-separated list of labels that will automatically drop the frame when present in the frame
+  --key-label KEY_LABEL
+                        the meta-data key in the annotations that contains the label.
+  --key-score KEY_SCORE
+                        the meta-data key in the annotations to use for storing the prediction score.
+  --min-score MIN_SCORE
+                        the minimum score that predictions must have in order to be included in the label checks, ignored if not supplied
+  --required-labels REQUIRED_LABELS
+                        the comma-separated list of labels that must be present in the frame, otherwise it gets dropped
+  -v, --verbose         whether to output debugging information.
+```
+
+
 ### FROM-VIDEO-FILE-OD
 Reads frames from a video file.
 

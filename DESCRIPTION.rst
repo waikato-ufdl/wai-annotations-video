@@ -8,6 +8,7 @@ The following sources are available:
 The following inline stream processors (ISPs) are available:
 
 * `drop-frames`: drops every nth frame from the stream
+* `filter-frames-by-label-od`: filter frames based on presence/absence of labels (score can be taken into account)
 * `skip-similar-frames`: drops frames that are too similar to each other
 
 The following sinks are avilable:
