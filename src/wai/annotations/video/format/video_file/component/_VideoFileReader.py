@@ -107,7 +107,7 @@ class VideoFileReader(
                 data = cv2.imencode(".jpg", frame_curr)[1].tobytes()
                 prefix = (os.path.splitext(os.path.basename(self.input_file))[0] + "-") if (len(self.prefix) == 0) else self.prefix
                 filename = os.path.join(
-                    os.path.dirname(self.input_file),
+                    self.input_file,
                     "%s%08d.jpg" % (prefix, self._frame_no))
                 height, width, _ = frame_curr.shape
                 image = Image(filename=filename, data=data, format=ImageFormat.JPG, size=(width, height))
