@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.2 (2022-09-05)
+------------------
+
+- VideoFileReader source now passes on a file path with the frames as well
+
+
 1.0.1 (2022-06-13)
 ------------------
 
